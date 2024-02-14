@@ -2,8 +2,8 @@ function calculateIMC() {
   const form = document.querySelector("#form");
   const resultado = document.querySelector("#result");
 
-  form.addEventListener("submit", function (evento) {
-    evento.preventDefault();
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
 
     let peso = form.querySelector("#peso").value;
     let altura = form.querySelector("#altura").value;
@@ -21,7 +21,7 @@ function calculateIMC() {
     }
 
     const IMC = peso/(altura * altura);
-    resultado.innerHTML += `<p class="success">O valor do seu IMC é ${IMC}.</p>`;
+    resultado.innerHTML += `<p class="success">O valor do seu IMC é ${Math.floor(IMC)}.</p>`;
     
     if(IMC < 18.5){
       resultado.innerHTML += `<p class="success">Você está Abaixo do Peso</p>`;
@@ -38,6 +38,14 @@ function calculateIMC() {
     }
     
   });
+}
+
+function createParagraph(){
+
+}
+
+function setResult(msg){
+
 }
 
 calculateIMC();
